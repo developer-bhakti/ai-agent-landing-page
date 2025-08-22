@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+  color: white;
+
+  /* ✅ Background image */
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.2) 75%
+    ),
+    url("./assets/bg-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* covers full section */
+  background: url("./assets/bg-hero.png") center/cover no-repeat,
+    rgba(0, 0, 0, 0.81) !important;
+  transform: scaleY(-1); /* same as matrix(1,0,0,-1,0,0) */
+  z-index: -1; /* send background behind */
+}
+
+.section::after {
+  height: 120vh;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("./assets/bg-hero-after.png") center/cover no-repeat; /* your "after" image */
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.core-benifits {
+  position: relative;
+  width: 100%;       /* container takes full width */
+  height: 100vh;     /* full viewport height */
+
+  /* Background Image */
+  background: url("./assets/core-benifits.png") no-repeat left center;
+  background-size: 80% auto;  /* image takes 80% width of container */
+
+  /* Optional styling */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
