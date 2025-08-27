@@ -1,28 +1,31 @@
-import CoreBenefits from "./Components/CoreBenefits"
-import Footer from "./Components/Footer"
-import HeroSection from "./Components/HeroSection"
-import HowItWorks from "./Components/HowItWorks"
-import Navbar from "./Components/Navbar"
-import PricingSection from "./Components/PricingSection"
-import Testimonials from "./Components/Testimonials"
-import TrustedTeams from "./Components/TrustedTeams"
-import UseCases from "./Components/UseCases"
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import DashboardLayout from "./dashboard/Layout/DashboardLayout";
+import Overview from "./dashboard/Pages/overview/Overview";
+import Agents from "./dashboard/Pages/Agents";
+import Integrations from "./dashboard/Pages/Integrations";
+import Templates from "./dashboard/Pages/Templates";
+import Reports from "./dashboard/Pages/Reports";
+import Settings from "./dashboard/Pages/Settings";
 
-
-const App = () => {
+function App() {
   return (
-     <div className="bg-black min-h-screen">
-      <Navbar />
-      <HeroSection/>
-      <TrustedTeams /> 
-      <CoreBenefits />
-      <HowItWorks />
-      <UseCases />
-      <Testimonials />
-      <PricingSection />
-      <Footer />
+    <div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Overview />} />
+          {/* this is second */}
+
+          <Route path="agents" element={<Agents />} />
+          <Route path="integrations" element={<Integrations />} />
+          <Route path="templates" element={<Templates />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
