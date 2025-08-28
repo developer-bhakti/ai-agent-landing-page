@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import DashboardLayout from "./dashboard/Layout/DashboardLayout";
 import Overview from "./dashboard/Pages/overview/Overview";
-import Agents from "./dashboard/Pages/Agents";
-import Integrations from "./dashboard/Pages/Integrations";
-import Templates from "./dashboard/Pages/Templates";
-import Reports from "./dashboard/Pages/Reports";
+import Agents from "./dashboard/Pages/agent/Agents";
+import Integrations from "./dashboard/Pages/integration/Integrations";
+import Templates from "./dashboard/Pages/Templates/Templates";
+import Reports from "./dashboard/Pages/reports/Reports";
 import Settings from "./dashboard/Pages/Settings";
 
 function App() {

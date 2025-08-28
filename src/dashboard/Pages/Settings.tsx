@@ -1,7 +1,14 @@
+import Activity from "./agent/Activity"
+import FlowBuilder from "./overview/FlowBuilder"
+import LiveAgentFeed from "./overview/LiveAgentFeed"
 
 const Settings = () => {
   return (
-    <div>settings</div>
+    <>
+    <Activity/>
+    <LiveAgentFeed/>
+    <FlowBuilder />
+    </>
   )
 }
 
