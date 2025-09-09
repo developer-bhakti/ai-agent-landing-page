@@ -7,6 +7,8 @@ import Integrations from "./dashboard/Pages/integration/Integrations";
 import Templates from "./dashboard/Pages/Templates/Templates";
 import Reports from "./dashboard/Pages/reports/Reports";
 import Settings from "./dashboard/Pages/Settings";
+import NewDashboardlayout from "./newdashboard/layout/NewDashboardlayout";
+import NewOverview from "./newdashboard/Pages/newOverview";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Route path="templates" element={<Templates />} />
           <Route path="reports" element={<Reports />} />
           <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="/newdashboard" element={<NewDashboardlayout />}>
+          <Route index element={<NewOverview />} />
         </Route>
       </Routes>
     </div>
